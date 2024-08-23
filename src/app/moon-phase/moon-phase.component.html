@@ -1,0 +1,11 @@
+<div>
+    <h2>Фазы Луны</h2>
+    <label for="datePicker">Выберите дату:</label>
+    <input type="date" id="datePicker" [(ngModel)]="selectedDate" (change)="onDateChange()" />
+  
+    <div *ngIf="moonPhaseData">
+      <h3>Фаза Луны на {{ selectedDate }}:</h3>
+      <p>{{ moonPhaseData.phaseName }}</p>
+      <img [src]="moonPhaseData.imageUrl" alt="Фаза Луны" />
+    </div>
+  </div>
